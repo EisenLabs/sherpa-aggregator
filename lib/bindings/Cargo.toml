@@ -1,0 +1,15 @@
+[package]
+name = "bindings"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ethers.workspace = true
+
+[build-dependencies]
+ethers.workspace = true
+heck.workspace = true
+glob.workspace = true
+
+[lib]
+path = "src/lib.rs"

@@ -1,0 +1,24 @@
+[package]
+name = "eisen-ethers"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+ethers.workspace = true
+foundry-utils.workspace = true
+anvil.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+governor.workspace = true
+async-trait.workspace = true
+futures.workspace = true
+itertools.workspace = true
+reqwest.workspace = true
+anyhow.workspace = true
+
+bindings = { path = "../lib/bindings" }
+
+[lib]
+path = "src/lib.rs"

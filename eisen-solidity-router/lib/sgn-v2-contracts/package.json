@@ -1,0 +1,68 @@
+{
+  "name": "sgn-v2-contracts",
+  "version": "0.2.0",
+  "description": "SGN V2 Contracts",
+  "scripts": {
+    "clean": "hardhat clean",
+    "compile": "hardhat compile",
+    "generate:typechain": "rm -rf typechain && hardhat typechain",
+    "report-gas:summary": "REPORT_GAS=true hardhat test",
+    "report-gas:benchmark": "hardhat test benchmark/*.ts",
+    "size-contracts": "hardhat size-contracts | sed -r 's/[[:cntrl:]]\\[[0-9]{1,3}m//g' > reports/contract_sizes.txt",
+    "test": "hardhat compile && hardhat test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/celer-network/sgn-v2-contracts.git"
+  },
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/celer-network/sgn-v2-contracts/issues"
+  },
+  "homepage": "https://github.com/celer-network/sgn-v2-contracts#readme",
+  "devDependencies": {
+    "@nomiclabs/hardhat-ethers": "npm:hardhat-deploy-ethers",
+    "@nomiclabs/hardhat-waffle": "^2.0.6",
+    "@oasisprotocol/sapphire-hardhat": "^2.16.1",
+    "@openzeppelin/contracts": "4.5.0",
+    "@openzeppelin/contracts-upgradeable": "4.5.0",
+    "@openzeppelin/hardhat-upgrades": "^2.1.1",
+    "@openzeppelin/upgrades-core": "1.27.3",
+    "@typechain/ethers-v5": "^11.1.0",
+    "@typechain/hardhat": "^8.0.2",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.4.2",
+    "@types/sinon-chai": "^3.2.9",
+    "@typescript-eslint/eslint-plugin": "^6.1.0",
+    "@typescript-eslint/parser": "^6.1.0",
+    "chai": "^4.3.7",
+    "eslint": "^8.45.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-import": "^2.27.5",
+    "ethereum-waffle": "^4.0.10",
+    "ethers": "^5.7.2",
+    "fs-extra": "^11.1.1",
+    "hardhat": "^2.17.0",
+    "hardhat-contract-sizer": "^2.10.0",
+    "hardhat-deploy": "^0.11.34",
+    "hardhat-gas-reporter": "^1.0.9",
+    "husky": "^8.0.3",
+    "prettier": "^3.0.0",
+    "prettier-plugin-solidity": "^1.1.3",
+    "protobufjs": "^7.2.4",
+    "solc": "0.8.17",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.3.0",
+    "typescript": "^5.1.6"
+  },
+  "dependencies": {
+    "@matterlabs/hardhat-zksync-solc": "^0.4.1",
+    "@matterlabs/hardhat-zksync-upgradable": "^0.1.2",
+    "@matterlabs/hardhat-zksync-verify": "^0.2.0",
+    "@nomicfoundation/hardhat-verify": "^1.1.1",
+    "@rumblefishdev/hardhat-kms-signer": "1.1.2",
+    "aws-sdk": "2.1419.0",
+    "dotenv": "^16.3.1"
+  }
+}

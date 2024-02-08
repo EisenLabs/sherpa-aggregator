@@ -1,0 +1,6 @@
+{
+  "rust-analyzer.debug.engine": "vadimcn.vscode-lldb",
+  "rust-analyzer.checkOnSave.command": "clippy",
+  "editor.formatOnSave": true,
+  "rust-analyzer.showUnlinkedFileNotification": false
+}

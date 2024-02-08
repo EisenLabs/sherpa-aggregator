@@ -1,0 +1,24 @@
+[submodule "eisen-solidity-router/lib/forge-std"]
+	path = eisen-solidity-router/lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+[submodule "eisen-solidity-router/lib/solmate"]
+	path = eisen-solidity-router/lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "eisen-solidity-router/lib/permit2"]
+	path = eisen-solidity-router/lib/permit2
+	url = https://github.com/Uniswap/permit2
+[submodule "eisen-solidity-router/lib/solady-gas-optimization"]
+	path = eisen-solidity-router/lib/solady-gas-optimization
+	url = https://github.com/Vectorized/solady
+[submodule "eisen-solidity-router/lib/foundry-zksync-era"]
+	path = eisen-solidity-router/lib/foundry-zksync-era
+	url = https://github.com/omurovec/foundry-zksync-era
+[submodule "eisen-solidity-router/lib/create3-factory"]
+	path = eisen-solidity-router/lib/create3-factory
+	url = https://github.com/lifinance/create3-factory.git
+[submodule "eisen-solidity-router/lib/sgn-v2-contracts"]
+	path = eisen-solidity-router/lib/sgn-v2-contracts
+	url = https://github.com/celer-network/sgn-v2-contracts
+[submodule "eisen-solidity-router/lib/safe-tx-cli"]
+	path = eisen-solidity-router/lib/safe-tx-cli
+	url = https://github.com/sambacha/safe-tx-cli

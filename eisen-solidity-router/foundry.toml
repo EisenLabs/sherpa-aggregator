@@ -1,0 +1,101 @@
+[profile.default]
+src = 'contracts'
+out = 'out'
+libs = ["node_modules", "lib"]
+test='test/foundry-tests'
+via_ir = true
+solc_version = '0.8.19'
+optimizier =true
+optimizer_runs = 100000
+memory_limit = 9223372036854775807
+fs_permissions = [
+    { access = "read-write", path = "./script/"}, 
+    {access = "read", path = "./tasks/"},  
+    { access = "read", path = "./deployments/" },
+  { access = "read", path = "./config/" },
+  { access = "read-write", path = "./test/logs/" },
+  { access = "read-write", path = "./test/logs/" }
+  ]
+gas_reports = ["*"]
+ffi = true
+cache = true
+
+
+
+[fmt]
+line_length = 120
+quote_style = 'single'
+
+[profile.lite.optimizer_details.yulDetails]
+optimizerSteps = ''
+yul=false
+
+# See more config options https://github.com/foundry-rs/foundry/tree/master/config
+
+[rpc_endpoints]
+mainnet = "${ETH_NODE_URI_MAINNET}"
+arbitrum = "${ETH_NODE_URI_ARBITRUM}"
+aurora = "${ETH_NODE_URI_AURORA}"
+avalanche = "${ETH_NODE_URI_AVALANCHE}"
+boba = "${ETH_NODE_URI_BOBA}"
+bsc = "${ETH_NODE_URI_BSC}"
+celo = "${ETH_NODE_URI_CELO}"
+cronos = "${ETH_NODE_URI_CRONOS}"
+scroll = "${ETH_NODE_URI_SCROLL}"
+evmos = "${ETH_NODE_URI_EVMOS}"
+fantom = "${ETH_NODE_URI_FANTOM}"
+fuse = "${ETH_NODE_URI_FUSE}"
+harmony = "${ETH_NODE_URI_HARMONY}"
+gnosis = "${ETH_NODE_URI_GNOSIS}"
+moonbeam = "${ETH_NODE_URI_MOONBEAM}"
+moonriver = "${ETH_NODE_URI_MOONRIVER}"
+nova = "${ETH_NODE_URI_NOVA}"
+okx = "${ETH_NODE_URI_OKX}"
+optimism = "${ETH_NODE_URI_OPTIMISM}"
+polygon = "${ETH_NODE_URI_POLYGON}"
+polygonzkevm = "${ETH_NODE_URI_POLYGONZKEVM}"
+velas = "${ETH_NODE_URI_VELAS}"
+mantle="${ETH_NODE_URI_MANTLE}"
+base = "${ETH_NODE_URI_BASE}"
+wemix = "${ETH_NODE_URI_WEMIX}"
+mode = "${ETH_NODE_URI_MODE}"
+zeta = "${ETH_NODE_URI_ZETA}"
+zeta_test = "${ETH_NODE_URI_ZETA_TEST}"
+
+# testnets
+goerli = "${ETH_NODE_URI_GOERLI}"
+bsc-testnet = "${ETH_NODE_URI_BSCTEST}"
+lineatest = "${ETH_NODE_URI_LINEATEST}"
+localanvil = "${ETH_NODE_URI_LOCALANVIL}"
+mumbai = "${ETH_NODE_URI_MUMBAI}"
+
+[etherscan]
+mainnet = { key = "${MAINNET_ETHERSCAN_API_KEY}" }
+arbitrum = { key = "${ARBITRUM_ETHERSCAN_API_KEY}", url = "https://api.arbiscan.io/api" }
+aurora = { key = "${AURORA_ETHERSCAN_API_KEY}", url = "https://api.aurorascan.dev/api" }
+avalanche = { key = "${AVALANCHE_ETHERSCAN_API_KEY}", url = "https://api.snowtrace.io/api" }
+boba = { key = "${BOBA_ETHERSCAN_API_KEY}", url = "https://api.bobascan.com/api" }
+bsc = { key = "${BSC_ETHERSCAN_API_KEY}", url = "https://api.bscscan.com/api" }
+celo = { key = "${CELO_ETHERSCAN_API_KEY}", url = "https://explorer.celo.org/api" }
+cronos = { key = "${CRONOS_ETHERSCAN_API_KEY}", url = "https://api.cronoscan.com/api" }
+scroll = { key = "${SCROLL_ETHERSCAN_API_KEY}", url = "https://scrollscan.com/" }
+fantom = { key = "${FANTOM_ETHERSCAN_API_KEY}", url = "https://api.ftmscan.com/api" }
+fuse = { key = "${FUSE_ETHERSCAN_API_KEY}", url = "https://explorer.fuse.io/api" }
+gnosis = { key = "${GNOSIS_ETHERSCAN_API_KEY}", url = "https://blockscout.com/poa/xdai/api" }
+moonbeam = { key = "${MOONBEAM_ETHERSCAN_API_KEY}", url = "https://api-moonbeam.moonscan.io/api" }
+moonriver = { key = "${MOONRIVER_ETHERSCAN_API_KEY}", url = "https://api-moonriver.moonscan.io/api" }
+nova = { key = "${NOVA_ETHERSCAN_API_KEY}", url = "https://nova.arbiscan.io/api" }
+optimism = { key = "${OPTIMISM_ETHERSCAN_API_KEY}", url = "https://api-optimistic.etherscan.io/api" }
+mantle = { key = "${MANTLE_ETHERSCAN_API_KEY}", url = "https://explorer.mantle.xyz/" }
+polygon = { key = "${POLYGON_ETHERSCAN_API_KEY}", url = "https://api.polygonscan.com/api" }
+polygonzkevm = { key = "${POLYGONZKEVM_ETHERSCAN_API_KEY}", url = "https://api-zkevm.polygonscan.com/api" }
+base = { key = "${BASE_ETHERSCAN_API_KEY}", url = "https://api.basescan.org/api"}
+wemix = { key = "${WEMIX_ETHERSCAN_API_KEY}", url = "https://wemixscan.com/"}
+mode = { key = "${MODE_ETHERSCAN_API_KEY}", url = "https://explorer.mode.network/"}
+zeta = { key = "${ZETA_ETHERSCAN_API_KEY}", url = "https://zetachain.blockscout.com"}
+
+#testnets
+goerli = { key = "${MAINNET_ETHERSCAN_API_KEY}" }
+bsc-testnet = { key = "${BSC_ETHERSCAN_API_KEY}", url = "https://api-testnet.bscscan.com/" }
+mumbai = { key = "${MUMBAI_ETHERSCAN_API_KEY}", url = "https://api-testnet.polygonscan.com/api" }
+zeta_test = { key = "${ZETA_TEST_ETHERSCAN_API_KEY}", url = "https://zetachain-athens-3.blockscout.com/"}

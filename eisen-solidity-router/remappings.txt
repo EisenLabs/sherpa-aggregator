@@ -1,0 +1,17 @@
+
+ds-test/=lib/forge-std/lib/ds-test/src/
+era-contracts/=lib/foundry-zksync-era/lib/era-contracts/
+era-system-contracts/=lib/foundry-zksync-era/lib/era-system-contracts/
+forge-gas-snapshot/=lib/permit2/lib/forge-gas-snapshot/src/
+forge-std/=lib/forge-std/src/
+foundry-zksync-era/=lib/foundry-zksync-era/
+openzeppelin-contracts/=lib/permit2/lib/openzeppelin-contracts/
+solidity-stringutils/=lib/foundry-zksync-era/lib/solidity-stringutils/
+@connext/=node_modules/@connext/
+@eth-optimism/=node_modules/@hop-protocol/sdk/node_modules/@eth-optimism/
+create3-factory/=lib/create3-factory/src/
+solmate/=lib/solmate/src/
+permit2/=lib/permit2/
+eth-gas-reporter/=node_modules/eth-gas-reporter/
+celer-network/=lib/sgn-v2-contracts
+eisen/=contracts/

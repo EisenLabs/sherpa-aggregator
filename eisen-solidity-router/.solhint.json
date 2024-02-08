@@ -1,0 +1,19 @@
+{
+  "rules": {
+    "max-line-length": ["warn", 120],
+    "no-unused-vars": "warn",
+    "reason-string": ["warn", { "maxLength": 32 }],
+    "constructor-syntax": "error",
+    "quotes": ["error", "double"],
+    "const-name-snakecase": "warn",
+    "contract-name-camelcase": "warn",
+    "event-name-camelcase": "warn",
+    "func-param-name-mixedcase": "warn",
+    "modifier-name-mixedcase": "warn",
+    "private-vars-leading-underscore": ["warn", { "strict": false }],
+    "var-name-mixedcase": "warn",
+    "imports-on-top": "error",
+    "visibility-modifier-order": "warn",
+    "state-visibility": "warn"
+  }
+}

@@ -1,0 +1,4 @@
+forge-std/=lib/forge-std/src/
+solidity-stringutils/=lib/solidity-stringutils/src/
+era-contracts/=lib/era-contracts
+era-system-contracts/=lib/era-system-contracts

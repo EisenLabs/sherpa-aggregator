@@ -1,0 +1,57 @@
+syntax = "proto3";
+
+package entities;
+
+message BlockEvent {
+  string block_number = 1;
+  repeated Token updated_tokens = 2;
+  repeated Pool updated_pools = 3;
+}
+
+message Token {
+  string address = 1;
+  int32 decimal = 2;
+  string symbol = 3;
+  string name = 4;
+  string icon = 6;
+  bool bookmarked = 7;
+  bool paused = 5;
+}
+
+message UniV2 {
+  string dex_id = 1;
+  string address = 2;
+  string token_a = 3;
+  string token_b = 4;
+  string balance_a = 5;
+  string balance_b = 6;
+  string fee_numerator = 7;
+  string fee_denominator = 8;
+  string gasfee = 9;
+}
+
+
+message UniV3{
+  string dex_id = 1;
+  string address = 2;
+  string token_a = 3;
+  string token_b = 4;
+
+  int32 fee = 5;
+  map<int64, string> tick2liquidity_net = 6;
+  int64 tickspacing = 7;
+  string liquidity = 8;
+
+  string slot0_sqrt_price_x96 = 10;
+  int64 slot0_tick = 11;
+  string gasfee = 12;
+  int64 min_tick = 13;
+  int64 max_tick = 14;
+}
+
+message Pool {
+  oneof value {
+    UniV2 uni_v2 = 1;
+    UniV3 uni_v3 = 2;
+  }
+}

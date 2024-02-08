@@ -1,0 +1,106 @@
+// SPDX-License-Identifier: MIT 
+
+pragma solidity 0.8.19; 
+
+import {LibPayments, Recipient, Payer} from "contracts/Libraries/LibPayments.sol";
+
+import {LibAllowList} from "contracts/Libraries/LibAllowList.sol";
+import {GenericErrors} from "contracts/Errors/GenericErrors.sol";
+import {Constants} from "contracts/Libraries/Constants.sol";
+import {ERC20} from "solmate/tokens/ERC20.sol";
+import {UniERC20} from "contracts/Libraries/UniERC20.sol";
+import  "contracts/Interfaces/I{{titleCase name}}.sol";
+
+/// @title {{titleCase name}}Facet 
+/// @author Eisen (https://app.eisenfinance.com) 
+/// @notice {{description}}
+/// @custom:version 1.0.0 
+contract {{titleCase name}}Facet is {{titleCase name}}Viewer { 
+    using UniERC20 for address;
+    using LibPayments for Payer;
+    using LibPayments for Recipient;
+
+    /// Storage /// 
+    address public immutable example; 
+    /// Types /// 
+    /// @param exampleParam Example paramter 
+    struct {{titleCase name}}Data { string exampleParam; } 
+    
+    /// Constructor /// 
+    /// @notice Initialize the contract. 
+    /// @param _example Example paramter. 
+    constructor(address _example) { example = _example; } 
+
+
+    
+    /// External Methods /// 
+    /// @notice Performs a {{titleCase name}} exact input swap
+    /// @dev  To Use {{titleCase name}} with ETH, the ETH must be wrapped before calling it
+    /// @param amountIn The amount of input tokens for the trade
+    /// @param path The path of the trade as an array of token [-token] addresses
+    /// @param recipient The recipient of the output tokens
+    /// @param payer The address that will be paying the input
+    /// @return inputToken The address of input token
+    /// @return outputToken The address of output token
+    /// @return amountOut The amount of output tokens for the trade
+    function {{camelCase name}}SwapExactInput(
+        uint256 amountIn,
+        address router,
+        address[] memory path,
+        Recipient recipient,
+        Payer payer
+    ) public payable returns (address inputToken, address outputToken, uint256 amountOut) {
+        inputToken = path[0];
+        payer = payer.payerMap();
+        recipient = recipient.map();
+        // amountIn of 0 to signal that the pair already has the tokens
+         if (amountIn != Constants.ALREADY_PAID) {
+            LibPayments.payOrPermit2Transfer(inputToken, payer, firstPair, amountIn);
+        }
+
+        outputToken = path[path.length - 1];
+
+        uint256 balanceBefore = outputToken.uniBalanceOf(Recipient.unwrap(recipient));
+        amountOut = outputToken.uniBalanceOf(Recipient.unwrap(recipient)) - balanceBefore;
+        if (amountOut == 0) revert GenericErrors.GenericError(GenericErrors.OVERFLOW_UNDERFLOW);
+    }
+
+
+    /// View Methods ///
+
+    /// @notice Get deployed pair num from factory
+    function {{camelCase name}}PoolNum(address factory) external view override returns (uint256) {
+        return IFactory(factory).allPairsLength();
+    }
+
+    /// @notice Get deployed pair addresses by indexing
+    function  {{camelCase name}}Pools(address factory, uint256 start, uint256 end) external view override returns (address[] memory) {
+        uint256 maxEnd = IFactory(factory).allPairsLength();
+        if (end > maxEnd) {
+            end = maxEnd;
+        }
+        uint256 length = end - start;
+        address[] memory _pools = new address[](length);
+        for (uint256 i = 0; i < length; i++) {
+            _pools[i] = IFactory(factory).allPairs(start + i);
+        }
+        return _pools;
+    }
+
+    /// @notice Get {{camelCase name}} pool param info using pool address
+    function {{camelCase name}}PoolParams(address pool) external view override returns ({{titleCase name}}PoolParamsResponse memory) {
+        {{titleCase name}}PoolParamsResponse memory response;
+       
+
+        return response;
+    }
+
+    /// @notice Get {{camelCase name}} pool state info using pool address
+    function {{camelCase name}}PoolState(address pool) external view override returns ({{titleCase name}}PoolStateResponse memory) {
+        {{titleCase name}}PoolStateResponse memory response;
+
+        return response;
+    }
+
+
+}

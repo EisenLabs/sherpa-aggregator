@@ -1,0 +1,8 @@
+query MyQuery($first: Int = 10, $skip: Int = 0) {
+  dexAmmProtocols {
+    name
+    pools(first: $first, skip: $skip) {
+      id
+    }
+  }
+}

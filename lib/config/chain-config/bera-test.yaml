@@ -1,0 +1,70 @@
+chainMetadata:
+  id: "bera-test"
+  chainId: 80085
+  nodes:
+    - endpoint: "https://artio.rpc.berachain.com/"
+      rps: 20
+  nativeSymbol: "BERA"
+  blockExplorer: "https://artio.beratrail.io//tx/%%txHash%%"
+  tokenIconUri: "https://static.eisenfinance.com/tokens/warning-icon.png"
+
+tokens:
+  native:
+    name: Berachain Token
+    symbol: BERA
+    address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/bera.png
+    decimals: 18
+    bookmarked: true
+  wrappedNatives:
+    - symbol: WBERA
+      name: Wrapped BERA
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/wbera.png
+      address: "0x5806E416dA447b267cEA759358cF22Cc41FAE80F"
+      decimals: 18
+      bookmarked: true
+  dollarQuote:
+    symbol: HONEY
+    name: HONEY
+    icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/honey.png
+    address: "0x7EeCA4205fF31f947EdBd49195a7A88E6A91161B"
+    decimals: 18
+    bookmarked: true
+  others:
+    - name: Bera Governance Token
+      symbol: BGT
+      address: "0xAcD97aDBa1207dCf27d5C188455BEa8a32E80B8b"
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/bgt.png
+      decimals: 18
+      bookmarked: true
+    - name: Stable Collateral USD Coin
+      symbol: STGUSDC
+      address: "0x6581e59A1C8dA66eD0D313a0d4029DcE2F746Cc5"
+      icon: https://assets.coingecko.com/coins/images/6319/small/USD_Coin_icon.png?1547042389
+      decimals: 18
+      bookmarked: true
+    - name: WBTC
+      symbol: WBTC
+      address: "0x9DAD8A1F64692adeB74ACa26129e0F16897fF4BB"
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/btc.png
+      decimals: 8
+      bookmarked: true
+    - name: WETH
+      symbol: WETH
+      address: "0x8239FBb3e3D0C2cDFd7888D8aF7701240Ac4DcA4"
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/eth.png
+      decimals: 18
+      bookmarked: true
+    - name: Honey Variable Debt Token
+      symbol: vdHONEY
+      address: "0x7f8E75356015fECfafF66e2B34F181A093Dc4519"
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/honey.png
+      decimals: 18
+    - name: Honey aToken
+      symbol: aHONEY
+      address: "0xc63FAb87Cb00249190577937Ab6E04dA0AE69633"
+      icon: https://raw.githubusercontent.com/berachain/default-token-list/main/src/assets/honey.png
+      decimals: 18
+
+contracts:
+  multicall2: "0x9d1dB8253105b007DDDE65Ce262f701814B91125"

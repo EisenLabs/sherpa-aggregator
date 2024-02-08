@@ -1,0 +1,37 @@
+chainMetadata:
+  id: "base"
+  chainId: 8453
+  nodes:
+    - endpoint: "https://base.llamarpc.com"
+  nativeSymbol: "ETH"
+  blockExplorer: "https://basescan.org/tx/%%txHash%%"
+  tokenIconUri: "https://static.eisenfinance.com/tokens/warning-icon.png"
+
+tokens:
+  native:
+    name: Ethereum
+    symbol: ETH
+    address: "0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE"
+    decimals: 18
+    bookmarked: true
+  wrappedNatives:
+    - symbol: WETH
+      name: Wrapped Ether
+      address: "0x4200000000000000000000000000000000000006"
+      decimals: 18
+      bookmarked: true
+  dollarQuote:
+    symbol: USDC
+    name: USD Coin
+    address: "0x833589fCD6eDb6E08f4c7C32D4f71b54bdA02913"
+    decimals: 6
+    bookmarked: true
+  others:
+    - name: Bridged USD Coin (Base)
+      symbol: USDBC
+      address: "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA"
+      decimals: 6
+      bookmarked: true
+
+contracts:
+  multicall2: "0xcA11bde05977b3631167028862bE2a173976CA11"

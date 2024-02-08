@@ -1,0 +1,61 @@
+*.ansi
+lcov.info
+docs/
+
+# Compiler files
+cache/
+cache-zk/
+out/
+artifacts/
+artifacts-zk/
+
+# Ignores development broadcast logs
+!/broadcast
+/broadcast/*
+/broadcast/*/31337/
+
+node_modules
+.env
+api_keys.ts
+coverage
+coverage.json
+typechain
+typechain-types
+script/config.sh
+
+test/foundry-tests/Playground.sol
+
+
+.yalc
+yalc.lock
+
+.idea/
+contractsInfo.json
+.DS_Store
+yarn-error.log
+
+.DS_Store*
+lcov.info
+
+
+test/logs
+.gas-snapshot
+
+#Hardhat files
+cache
+artifacts
+
+#vscode config Reference: https://book.getfoundry.sh/config/vscode
+# IDE settings
+.vscode/*
+!.vscode/settings.json.default
+!.vscode/launch.json.default
+!.vscode/extensions.json.default
+.idea
+
+eisen-**-key.json
+
+
+# script config
+scripts/config.sh
+script/config.sh
